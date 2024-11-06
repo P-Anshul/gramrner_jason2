@@ -1,0 +1,28 @@
+export default function json2html(data) {
+    // Start the HTML table with the data-user attribute
+    let html = `<table data-user="anshulparmar266@gmail.com">`;
+
+    // Create the table headers
+    html += `<thead><tr>`;
+    const headers = ["Name", "Age", "Gender"];
+    headers.forEach(header => {
+        html += `<th>${header}</th>`;
+    });
+    html += `</tr></thead>`;
+
+    // Create the table rows
+    html += `<tbody>`;
+    data.forEach(item => {
+        html += `<tr>`;
+        html += `<td>${item.Name || ''}</td>`;
+        html += `<td>${item.Age || ''}</td>`;
+        html += `<td>${item.Gender || ''}</td>`;
+        html += `</tr>`;
+    });
+    html += `</tbody>`;
+
+    // Close the table
+    html += `</table>`;
+    
+    return html;
+}
